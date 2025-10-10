@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularios e tabelas + introdução CAA</title>
+     <style>
+        table, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <h1>Formularios</h1>
@@ -18,6 +24,8 @@
         &lt;/form>
     </pre>
     <p>
+
+    <hr>
 
     <h1>Table</h1>
     <p>A tag table é utilizada para definição de tabela no HTML, 
@@ -40,12 +48,29 @@
     <span>O código anterior define a tabela abaixo:</span>
     <table>
         <tr>
-            <td>Celula 1x1</td>
-            <td>Celula 1x2</td>
+            <td rowspan="3">Carnes</td>
+            <td>Item</td>
+            <td colspan="2">Item Churrasco</td>
+            <td>valor</td>
         </tr>
         <tr>
-            <td>Celula 2x1</td>
-            <td>Celula 2x2</td>
+            <td>1</td>
+            <td>Carne</td>
+            <td>5KG</td>
+            <td>R$200,00</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Frango</td>
+            <td>2KG</td>
+            <td>R$40,00</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Bebidas</td>
+            <td>3</td>
+            <td>Cachaça</td>
+            <td>2L</td>
+            <td>R$150,00</td>
         </tr>
     </table>       
     
