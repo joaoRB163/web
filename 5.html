@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- CSS EXTERNO -->
+    
+    <style>
+        /*  Coódigo CSS incorporado ao documento html*/
+        p{
+            color: blue;
+        }
+    </style>
+
+    <title>CSS</title>
+</head>
+<body>
+    <!-- CSS INLINE -->
+    <p style="color: red;">Lorem</p>
+    <h1>Formas de declarar CSS no documento HTML</h1>
+    <ul>
+        <li>Externo - por meio da tag &lt;link rel="stylesheet" href="style.css"></li>
+        <li>Incorporado - por meio da tag &lt;style> no cabeçalho do nosso documento HTML</li>
+        <li>Inline - por meio do atributo style em qualquer tag HTML</li>
+        <li>** por meio da arvire DOM via JavaScript (JS)</li>
+    </ul>
+    
+    <!-- Script de estilização em JS -->
+    <script>
+        let p =document.querySelector("p");
+        p.style.color="#FFAABB";
+    </script>
+</body>
+</html>

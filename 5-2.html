@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            border: 1px solid black;
+        }
+        img{
+            height: 120px;
+            float: right;
+        }
+        html, body{
+            border-color: red;
+        }
+        .box{
+            /* display: inline/block/inline-block */
+            display: inline-block; 
+            width: 100px;
+            height: 100px;
+            /* position: static/relative/absolute 
+                relative -> muda a posição relativa a posição estática
+                absolute -> se posiciona em relação ao primeiro ancestral não estático e se não tiver será em relação ao html */
+            position: static;
+        }
+        #box2{
+            position: relative;
+            /* alterar posições [top, bottom, left, right] */
+            top: 30px;
+            left: 30px;
+
+        }
+        #box3{
+            position: absolute;
+            top: 50px;
+        }
+        .container{
+
+            position: relative;
+        }
+        #box4{
+            /* deixa fixado em relação ao view port (área visível do navegador) */
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background-color: chartreuse;
+        }
+    </style>
+    <title>Posicionar Elementos</title>
+</head>
+<body>
+    <h1>Titulo Bla Bla</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus earum, consectetur harum rerum similique eligendi blanditiis praesentium doloribus autem natus assumenda doloremque aperiam modi nam, mollitia eius nisi, voluptatibus aut.</p>
+    <span>Lorem</span>
+    <img src="imagens/pogona.webp" alt="">
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam rem vitae tenetur cum quaerat? Obcaecati placeat fuga architecto distinctio consequuntur, ad libero tempore vitae facilis, quam rem ea enim pariatur!</span>
+
+    <div class="container">
+        <div id="box1" class="box">box1</div>
+        <div id="box2" class="box">box2</div>
+        <div id="box3" class="box">box3</div>
+        <div id="box4" class="box">box4</div>
+        <div id="box5" class="box">box5</div>        
+    </div>
+</body>
+</html>

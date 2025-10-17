@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Seletor universal (todas as tags) */
+        *{
+            border: 1px dotted black;
+        }
+
+        /* Seletor por elemento + ID*/
+        p#p1{
+            color: red;
+            padding: 20px;
+        }
+        
+        /* Seletor por ID */
+        #p2, #p4{
+            color: orange;
+            border-top-color: red;
+            border-top-style: solid;
+            border-top-width: 10px;
+            border-top: 5px double blue;
+            /* Propriedade sintética */
+            border: 5px double magenta;
+            outline: 2px dotted green;
+            outline-offset: 40px;
+        }
+
+        /* Seletor por classe */
+        .churras{
+            background-color: #AAAAAA;
+            color: magenta;
+        }
+
+        /* Seletor por elemento, Seletor por classe + ID */
+        li, .churras#item3{
+            color: black;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <p id="p1">João Pedro</p>
+    <p id="p2">Antônio</p>
+    <p id="p3">Ana²</p>
+    <p id="p4">Antonia</p>
+    <ul>
+        <li id="item1" class="churras">Alcatra</li>
+        <li id="item2" class="churras">Linguiça</li>
+        <li id="item3" class="churras">Pão de alho</li>
+        <li id="item4" class="churras">Cerveja</li>
+        <li id="item5" class="churras">Carvão</li>
+        <li id="item6" class="churras">Medalhão</li>
+    </ul>
+</body>
+</html>
