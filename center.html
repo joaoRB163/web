@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center</title>
+    <style>
+        body{
+            display: flex;
+            /* controla o alinhamento das colunas */
+            justify-content: center;
+            /* controla o alinhamento das linhas */
+            align-items: center;
+            /* controla o alinhamento dentro do container */
+            align-content: center;
+            height: 100vh;
+        }
+        .box{
+            border-radius: 50%;
+            border: 40px solid;
+            width: 125px;
+            height: 125px;
+            flex-shrink: 0;
+            font-size: 4rem;
+            border-top-color: rgb(160, 73, 207);
+            border-right-color: rgb(113, 39, 140);
+            border-bottom-color: #5b1c6b;
+            border-left-color: rgb(76, 29, 91);
+            animation: rotacao 2.8s cubic-bezier(.05,.74,.88,.39) infinite;
+        }
+        @keyframes rotacao{
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="item1"></div>
+</body>
+</html>
