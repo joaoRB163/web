@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,22 @@
     <style>
         .container {
             display: grid;
+            height: 75vh;
+            width: 80vw;
+            grid-template-areas: 
+            "item1 item2 item3"
+            "item1 item2 item3"
+            "item4 item4 item4"
+            "item5 item5 item6";
         }
+        .item1 {grid-area: item1;}
+        .item2 {grid-area: item2;}
+        .item3 {grid-area: item3;}
+        .item4 {grid-area: item4;}
+        .item5 {grid-area: item5;}
+        .item6 {grid-area: item6;}
         .item {
-            background-color: #4CAF50;
+            background-color: #FFBB00AA;
             color: white;
             border: 2px solid #333;
             padding: 20px;
