@@ -1,0 +1,57 @@
+ol>li {
+    font-size: 27px;
+    font-weight: 600;
+}
+
+img {
+    width: 400px;
+    padding: 18px;
+}
+
+.direita {
+    float: right;
+}
+
+.esquerda {
+    float: left;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 245, 233, 0.897);
+    width: 60vw;
+    min-height: 25vh;
+    margin: 30px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+.box {
+    display: block;
+    width: 100%;
+    text-align: justify;
+    overflow: auto;
+    /* Faz a imagem ocupar todo o espaço que está utilizando dentro da div */
+    margin-top: 10px;
+}
+
+.text {
+    width: 50%;
+}
+
+.container h1,
+.container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.container1 {
+    width: 30vw;
+}
+
+.main {
+    text-align: center;
+    margin: 40px;
+}
