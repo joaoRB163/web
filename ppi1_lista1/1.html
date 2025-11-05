@@ -15,6 +15,7 @@
             width: 400px;
             padding: 18px;
         }
+
         .direita {
             float: right;
         }
@@ -39,19 +40,23 @@
             display: block;
             width: 100%;
             text-align: justify;
-            overflow: auto;
+            overflow: auto;     /* Faz a imagem ocupar todo o espaço que está utilizando dentro da div */
+            margin-top: 10px;
         }
 
-        .box:nth-child(n+2) {
-            margin-top: 40px;
-        }
-
-        .container h1 {
+        .container h1,
+        .container h2 {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 15px;
         }
-        .container1{
+
+        .container1 {
             width: 20vw;
+        }
+
+        .main {
+            width: 90%;
+            text-align: center;
         }
     </style>
 </head>
@@ -59,24 +64,29 @@
 <body>
     <!-- Autor: João Raphael Bataglion
         Data: 05-11-2025 -->
-    <h1>Estrutura Básica HTML</h1>
-    <div class="container container1">
-        <h2>Diferença entre Internet e WEB</h2>
-        <div>
-            <p>a Internet é a interconexão de redes de computadores, sendo a infraestrutura que possibilita a oferta de diversos
-                serviços, como e-mail, FTP, SSH e outros. Já a WEB é um desses serviços, caracterizado por documentos linkados
-                escritos em HTML, distribuídos por servidores HTTP que atendem às requisições dos navegadores em uma arquitetura
-                cliente-servidor, tudo isso utilizando a Internet.
-            </p>
-        </div>
-    </div>
-
-    <hr>
-    <div class="container">
-        <h1>História da Internet e da WEB</h1>
-        <ol>
+    <div class="main">
+        <h1>Estrutura Básica HTML</h1>
+        <div class="container container1">
+            <h2>Diferença entre Internet e WEB</h2>
             <div class="box">
-                <li>Nascimento da Internet (anos 60-70)</li>
+                <p>a Internet é a interconexão de redes de computadores, sendo a infraestrutura que possibilita a oferta
+                    de diversos
+                    serviços, como e-mail, FTP, SSH e outros. Já a WEB é um desses serviços, caracterizado por
+                    documentos linkados
+                    escritos em HTML, distribuídos por servidores HTTP que atendem às requisições dos navegadores em uma
+                    arquitetura
+                    cliente-servidor, tudo isso utilizando a Internet.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+        <div class="container">
+            <h1>História da Internet e da WEB</h1>
+            <div class="box">
+                <ol>
+                    <li>Nascimento da Internet (anos 60-70)</li>
+                </ol>
                 <img src="../img/ARPANET.webp" alt="Mapa Geográfico da ARPANET" class="direita">
                 <p>A história da internet é inseparável do período da <mark>Guerra Fria</mark>, que ocorreu de 1947 a
                     1991 e foi caracterizada pela disputa de influência e inovação tecnológica entre as superpotências,
@@ -90,12 +100,16 @@
                     que visava interconectar laboratórios de pesquisa. Inicialmente, a <strong>ARPANET</strong> ligou
                     apenas quatro universidades e permitiu aos cientistas compartilhar remotamente informações e
                     recursos. Este projeto não só buscou solucionar questões de segurança nacional, mas também
-                    estabeleceu as fundações para a <u>internet</u> moderna.</p>
-                <p class="direita">1<sup>o</sup> Imagem: <a href="https://www.darpa.mil/news/features/arpanet">darpa.mill</a></p>
+                    estabeleceu as fundações para a <u>internet</u> moderna.
+                </p>
+                <p class="direita">1<sup>o</sup> Imagem: <a
+                        href="https://www.darpa.mil/news/features/arpanet">darpa.mill</a></p>
             </div>
-                
+
             <div class="box">
-                <li>Padronização Global</li>
+                <ol start="2">
+                    <li>Padronização Global</li>
+                </ol>
                 <img src="../img/protocolo.webp" alt="Ilustração do protocolo TCP/IP" class="esquerda">
                 <p>Essa rede distribuída cresceu rapidamente. No final da década de 80, a Internet já interligava
                     milhares de <mark>centros de pesquisa, institutos, universidades e grandes empresas</mark> em todo o
@@ -104,30 +118,36 @@
                     protocolo de comunicação (NCP) para o novo <strong>TCP/IP</strong>.Até 1990, os serviços que podiam
                     ser encontrados na rede incluíam <u>e-mail</u> (cartas eletrônicas), <u>MIRC</u> (bate-papo),
                     <u>Gopher</u> (fórum de discussão em rede), e <u>FTP</u> (troca de arquivos entre máquinas). A rede
-                    também chegou ao Brasil em 1988, sendo liberada para uso privado e comercial em 1994.</p>
+                    também chegou ao Brasil em 1988, sendo liberada para uso privado e comercial em 1994.
+                </p>
                 <br><br><br>
-                <p class="esquerda">2<sup>o</sup> Imagem: <a href="https://www.istockphoto.com/es/fotos/tcp-ip">stockphoto.com</a></p>
+                <p class="esquerda">2<sup>o</sup> Imagem: <a
+                        href="https://www.istockphoto.com/es/fotos/tcp-ip">stockphoto.com</a></p>
             </div>
-                
+
             <div class="box">
-                <li>A Criação da World Wide Web</li>
+                <ol start="3">
+                    <li>A Criação da World Wide Web</li>
+                </ol>
                 <img src="../img/tim.webp" alt="Foto de Tim Berners-Lee" class="direita">
                 <p>Em <strong>1989</strong>, <mark>Tim Berners-Lee</mark>, um físico britânico trabalhando no
                     <strong>CERN</strong>, observou problemas na gestão do conhecimento e da informação e notou que
                     muitas vezes a informação estava registrada, mas simplesmente não podia ser encontrada. Então, para
                     resolver isso, ele propôs um sistema de gerenciamento de informações que utilizava <a
-                    href="https://pt.wikipedia.org/wiki/Hipertexto">hipertexto</a> para facilitar o compartilhamento
+                        href="https://pt.wikipedia.org/wiki/Hipertexto">hipertexto</a> para facilitar o compartilhamento
                     e a atualização de dados entre pesquisadores, a <a
-                    href="https://info.cern.ch/hypertext/WWW/TheProject.html">WEB</a>. No ano seguinte (1990), ele
+                        href="https://info.cern.ch/hypertext/WWW/TheProject.html">WEB</a>. No ano seguinte (1990), ele
                     desenvolveu o protocolo <strong>HTTP</strong> (para troca de informações entre cliente e servidor) e
                     a linguagem HTML para declarar documentos, além de implementar o primeiro servidor e cliente HTTP.
-                    </p>
+                </p>
                 <br><br>
-                <p class="direita">3<sup>o</sup> Imagem: <a href="https://home.cern/resources/image/computing/world-wide-web-images-gallery">home.cern</a></p>
+                <p class="direita">3<sup>o</sup> Imagem: <a
+                        href="https://home.cern/resources/image/computing/world-wide-web-images-gallery">home.cern</a>
+                </p>
             </div>
-        </ol>
+        </div>
+        <hr>
     </div>
-    <hr>
 
 </body>
 
