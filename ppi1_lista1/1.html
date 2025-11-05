@@ -15,12 +15,6 @@
             width: 400px;
             padding: 18px;
         }
-
-        span {
-            background-color: rgba(68, 255, 51, 0.849);
-            color: black;
-        }
-
         .direita {
             float: right;
         }
@@ -31,24 +25,33 @@
 
         .container {
             display: flex;
+            flex-direction: column;
             background-color: rgba(255, 245, 233, 0.897);
             width: 60vw;
-            height: 125vh;
-            justify-content: center;
-            align-items: center;
+            min-height: 25vh;
+            margin: 30px;
+            padding: 20px;
             border: 2px solid black;
             border-radius: 5%;
         }
 
         .box {
             display: block;
-            width: 55vw;
-            height: 350px;
+            width: 100%;
             text-align: justify;
+            overflow: auto;
         }
 
         .box:nth-child(n+2) {
-            padding-top: 15px;
+            margin-top: 40px;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .container1{
+            width: 20vw;
         }
     </style>
 </head>
@@ -57,59 +60,70 @@
     <!-- Autor: João Raphael Bataglion
         Data: 05-11-2025 -->
     <h1>Estrutura Básica HTML</h1>
-    <h3>Diferença entre Internet e WEB</h3>
-    <p>a Internet é a interconexão de redes de computadores, sendo a infraestrutura que possibilita a oferta de diversos
-        serviços, como e-mail, FTP, SSH e outros. Já a WEB é um desses serviços , caracterizado por documentos linkados
-        escritos em HTML, distribuídos por servidores HTTP que atendem às requisições dos navegadores em uma arquitetura
-        cliente-servidor, tudo isso utilizando a Internet como meio
-    </p>
+    <div class="container container1">
+        <h2>Diferença entre Internet e WEB</h2>
+        <div>
+            <p>a Internet é a interconexão de redes de computadores, sendo a infraestrutura que possibilita a oferta de diversos
+                serviços, como e-mail, FTP, SSH e outros. Já a WEB é um desses serviços, caracterizado por documentos linkados
+                escritos em HTML, distribuídos por servidores HTTP que atendem às requisições dos navegadores em uma arquitetura
+                cliente-servidor, tudo isso utilizando a Internet.
+            </p>
+        </div>
+    </div>
 
     <hr>
-    <h1>História da Internet e da WEB</h1>
     <div class="container">
+        <h1>História da Internet e da WEB</h1>
         <ol>
             <div class="box">
                 <li>Nascimento da Internet (anos 60-70)</li>
                 <img src="../img/ARPANET.webp" alt="Mapa Geográfico da ARPANET" class="direita">
                 <p>A história da internet é inseparável do período da <mark>Guerra Fria</mark>, que ocorreu de 1947 a
-                    1991 e foi
-                    caracterizada pela disputa de influência e inovação tecnológica entre as superpotências, em um
-                    cenário de profunda desconfiança mútua. Os sistemas militares de comunicação da época tinham uma
-                    imensa vulnerabilidade, pois eram centralizados, e a perda de poucas estações poderia interromper
-                    todo o serviço.<br>Em meio a essa tensão geopolítica da década de 60, o <mark>Departamento de Defesa
-                        dos
-                        Estados Unidos</mark> temia que um ataque pudesse comprometer suas linhas de comunicação. Essa
-                    preocupação
-                    foi o que fez com que a ARPA (<i>Advanced Research Projects Agency</i>), a fundação de
-                    desenvolvimento de
-                    projetos do ministério de defesa, financiasse a criação de uma rede experimental. Assim nasceu a
-                    <strong>ARPANET</strong> em 1969, uma iniciativa que visava interconectar laboratórios de pesquisa.
-                    Inicialmente, a
-                    <strong>ARPANET</strong> ligou apenas quatro universidades e permitiu aos cientistas compartilhar
-                    remotamente
-                    informações e recursos. Este projeto não só buscou solucionar questões de segurança nacional, mas
-                    também estabeleceu as fundações para a <u>internet</u> moderna.
-                </p>
+                    1991 e foi caracterizada pela disputa de influência e inovação tecnológica entre as superpotências,
+                    em um cenário de profunda desconfiança mútua. Os sistemas militares de comunicação da época tinham
+                    uma imensa vulnerabilidade, pois eram centralizados, e a perda de poucas estações poderia
+                    interromper todo o serviço.<br>Em meio a essa tensão geopolítica da década de 60, o
+                    <mark>Departamento de Defesa dos Estados Unidos</mark> temia que um ataque pudesse comprometer suas
+                    linhas de comunicação. Essa preocupação foi o que fez com que a ARPA (<i>Advanced Research Projects
+                        Agency</i>), a fundação de desenvolvimento de projetos do ministério de defesa, financiasse a
+                    criação de uma rede experimental. Assim nasceu a <strong>ARPANET</strong> em 1969, uma iniciativa
+                    que visava interconectar laboratórios de pesquisa. Inicialmente, a <strong>ARPANET</strong> ligou
+                    apenas quatro universidades e permitiu aos cientistas compartilhar remotamente informações e
+                    recursos. Este projeto não só buscou solucionar questões de segurança nacional, mas também
+                    estabeleceu as fundações para a <u>internet</u> moderna.</p>
+                <p class="direita">1<sup>o</sup> Imagem: <a href="https://www.darpa.mil/news/features/arpanet">darpa.mill</a></p>
             </div>
-
+                
             <div class="box">
                 <li>Padronização Global</li>
                 <img src="../img/protocolo.webp" alt="Ilustração do protocolo TCP/IP" class="esquerda">
                 <p>Essa rede distribuída cresceu rapidamente. No final da década de 80, a Internet já interligava
-                    milhares de <span>centros de pesquisa, institutos, universidades e grandes empresas</span> em todo o
-                    mundo. Em 1985, a Internet já estava consolidada como a principal rede de comunicação com alcance global. Para
-                    garantir essa interconexão, no início dos anos 80, a <strong>ARPANET</strong> mudou seu protocolo de
-                    comunicação (NCP) para o novo <strong>TCP/IP</strong>.Até 1990, os serviços que podiam ser encontrados na rede
-                    incluíam <u>e-mail</u> (cartas eletrônicas), <u>MIRC</u> (bate-papo), <u>Gopher</u> (fórum de discussão em
-                    rede), e <u>FTP</u> (troca de arquivos entre máquinas). A rede também chegou ao Brasil em 1988, sendo liberada para uso privado
-                    e comercial em 1994.
-                </p>
+                    milhares de <mark>centros de pesquisa, institutos, universidades e grandes empresas</mark> em todo o
+                    mundo. Em 1985, a Internet já estava consolidada como a principal rede de comunicação com alcance
+                    global. Para garantir essa interconexão, no início dos anos 80, a <strong>ARPANET</strong> mudou seu
+                    protocolo de comunicação (NCP) para o novo <strong>TCP/IP</strong>.Até 1990, os serviços que podiam
+                    ser encontrados na rede incluíam <u>e-mail</u> (cartas eletrônicas), <u>MIRC</u> (bate-papo),
+                    <u>Gopher</u> (fórum de discussão em rede), e <u>FTP</u> (troca de arquivos entre máquinas). A rede
+                    também chegou ao Brasil em 1988, sendo liberada para uso privado e comercial em 1994.</p>
+                <br><br><br>
+                <p class="esquerda">2<sup>o</sup> Imagem: <a href="https://www.istockphoto.com/es/fotos/tcp-ip">stockphoto.com</a></p>
             </div>
-
+                
             <div class="box">
                 <li>A Criação da World Wide Web</li>
                 <img src="../img/tim.webp" alt="Foto de Tim Berners-Lee" class="direita">
-                <p>Em <strong>1989</strong>, <span>Tim Berners-Lee</span>, um físico britânico trabalhando no <strong>CERN</strong>, observou problemas na gestão do conhecimento e da informação e notou que muitas vezes a informação estava registrada, mas simplesmente não podia ser encontrada. Então, para resolver isso, ele propôs um sistema de gerenciamento de informações que utilizava <a href="https://pt.wikipedia.org/wiki/Hipertexto">hipertexto</a> para facilitar o compartilhamento e a atualização de dados entre pesquisadores, a <a href="https://info.cern.ch/hypertext/WWW/TheProject.html">WEB</a>. No ano seguinte (1990), ele desenvolveu o protocolo <strong>HTTP</strong> (para troca de informações entre cliente e servidor) e a linguagem HTML para declarar documentos, além de implementar o primeiro servidor e cliente HTTP.</p>
+                <p>Em <strong>1989</strong>, <mark>Tim Berners-Lee</mark>, um físico britânico trabalhando no
+                    <strong>CERN</strong>, observou problemas na gestão do conhecimento e da informação e notou que
+                    muitas vezes a informação estava registrada, mas simplesmente não podia ser encontrada. Então, para
+                    resolver isso, ele propôs um sistema de gerenciamento de informações que utilizava <a
+                    href="https://pt.wikipedia.org/wiki/Hipertexto">hipertexto</a> para facilitar o compartilhamento
+                    e a atualização de dados entre pesquisadores, a <a
+                    href="https://info.cern.ch/hypertext/WWW/TheProject.html">WEB</a>. No ano seguinte (1990), ele
+                    desenvolveu o protocolo <strong>HTTP</strong> (para troca de informações entre cliente e servidor) e
+                    a linguagem HTML para declarar documentos, além de implementar o primeiro servidor e cliente HTTP.
+                    </p>
+                <br><br>
+                <p class="direita">3<sup>o</sup> Imagem: <a href="https://home.cern/resources/image/computing/world-wide-web-images-gallery">home.cern</a></p>
             </div>
         </ol>
     </div>
