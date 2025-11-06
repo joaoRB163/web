@@ -10,8 +10,19 @@
 
 <body>
     <div class="main">
+        <a href="#" class="botao">Λ</a>
         <div class="container" id="curriculo">
             <h1>Curriculo</h1>
+            <nav>
+                <ul>
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#formacao">Formação</a></li>
+                    <li><a href="#experiencia">Experiência</a></li>
+                    <li><a href="#horarios">Horários</a></li>
+                    <li></li>
+                </ul>
+            </nav>
             <div class="box" id="box1">
                 <h2>João Raphael Bataglion</h2>
                 <img src="../img/Perfil.jpg" alt="Foto de perfil" id="perfil">
@@ -25,6 +36,8 @@
                     <p><strong>Instagram: </strong> <a href="https://www.instagram.com/yoshi163_/">@yoshi163_</a></p>
                     <p><strong>BeeCrowd: </strong><a href="https://judge.beecrowd.com/pt/profile/955063">joaoRB163</a>
                     </p>
+                    <p><strong>Linkedin: </strong><a href="https://www.linkedin.com/in/jo%C3%A3o-r-7a3346309/">João
+                            Raphael Bataglion</a></p>
                     <h3>Doações</h3>
                     <p><strong>Pix: </strong><a
                             href="https://nubank.com.br/cobrar/fdcqvc/690bf557-a63b-43da-aba1-e3f15e2680c5 ">Faça sua
@@ -32,48 +45,119 @@
                 </div>
             </div>
             <div class="box" id="box2">
-                <div class="texto-curriculo item1">
-                    <h2>Sobre mim</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id cupiditate, molestiae tempore
-                        perspiciatis suscipit nulla dignissimos? Similique optio, assumenda, sed saepe dolores inventore
-                        veniam corporis earum modi, provident dolore illo. Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Dolore quos error aliquam ut modi ex sint quibusdam labore nihil voluptate
-                        itaque magnam necessitatibus nam repudiandae mollitia, molestias sit blanditiis? Eos.</p>
-                </div>
-                <div class="texto-curriculo item2">
-                    <h2>Hard Skills</h2>
-                    <ul>
-                        <li>Git/GitHub</li>
-                        <li>Java</li>
-                        <li>Banco de Dados</li>
-                        <li>Estrutura de dados e algoritimos</li>
-                    </ul>
-                    <h2>Soft Skills</h2>
-                    <ul>
-                        <li>Resolução de problemas</li>
-                        <li>Aprendizado contínuo</li>
-                        <li>Trabalho em equipe</li>
-                        <li>Gerenciamento de tempo</li>
-                    </ul>
-                </div>
-                <div class="texto-curriculo item3">
-                    <h2>Formação Acadêmica</h2>
-                    <ul>
-                        <li>Superior em Análise e Desenvolvimento de Sistemas - IFSC (03/2025 - em andamento)</li>
-                        <li>Curso Técnico em Informática integrado ao Ensino médio - IFSC (03/2022 - 12/2024)</li>
-                    </ul>
-                </div>
-                <div class="texto-curriculo item4">
-                    <h2>Experiência Profissional</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quam ratione obcaecati,
-                        alias consequuntur perferendis modi accusantium optio quae nulla aspernatur. Nostrum cumque
-                        fugit deleniti incidunt, veniam et perspiciatis magni.</p>
+                <div class="texto-curriculo">
+                    <section id="sobre-mim">
+                        <details close>
+                            <summary>
+                                <h2>Sobre mim</h2>
+                            </summary>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id cupiditate, molestiae tempore
+                                perspiciatis suscipit nulla dignissimos? Similique optio, assumenda, sed saepe dolores
+                                inventore
+                                veniam corporis earum modi, provident dolore illo. Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Dolore quos error aliquam ut modi ex sint quibusdam labore nihil voluptate
+                                itaque magnam necessitatibus nam repudiandae mollitia, molestias sit blanditiis? Eos.</p>
+                        </details>
+                        <hr>
+                    </section>
+                    <section id="habilidades">
+                        <details>
+                            <summary close>
+                                <h2>Hard Skills</h2>
+                            </summary>
+                            <ul>
+                                <li><mark>Git/GitHub</mark></li>
+                                <li>Java</li>
+                                <li>Banco de Dados</li>
+                                <li>Algoritimos</li>
+                            </ul>
+                        </details>
+                        <details close>
+                            <summary>
+                                <h2>Soft Skills</h2>
+                            </summary>
+                            <ul>
+                                <li>Resolução de problemas</li>
+                                <li>Aprendizado contínuo</li>
+                                <li>Trabalho em equipe</li>
+                                <li>Gerenciamento de tempo</li>
+                            </ul>
+                        </details>
+                    </section>
+                    <hr>
+                    <section id="formacao">
+                        <details close>
+                            <summary>
+                                <h2>Formação Acadêmica</h2>
+                            </summary>
+                            <ul>
+                                <li>Superior em Análise e Desenvolvimento de Sistemas - <em>IFSC</em> (03/2025 - <b>em andamento</b>)</li>
+                                <li>Curso Técnico em Informática integrado ao Ensino médio - <em>IFSC</em> (03/2022 - 12/2024)</li>
+                            </ul>
+                        </details>
+                    </section>
+                    <hr>
+                    <section id="experiencia">
+                        <details close>
+                            <summary>
+                                <h2>Experiência Profissional</h2>
+                            </summary>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quam ratione obcaecati,
+                                alias consequuntur perferendis modi accusantium optio quae nulla aspernatur. Nostrum cumque
+                                fugit deleniti incidunt, veniam et perspiciatis magni.</p>
+                        </details>
+                    </section>
+                    <hr>
+                    <section id="horarios">
+                        <details close>
+                            <summary>
+                                <h2>Grade de horários - 2° período</h2>
+                            </summary>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Matéria</th>
+                                        <th>Dia</th>
+                                        <th>Horário</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Segunda-feira</td>
+                                        <td>Carga horária EAD</td>
+                                        <td>18:30 - 22:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Terça-feira</td>
+                                        <td>Eng. de Software I</td>
+                                        <td>18:30 - 22:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quarta-feira</td>
+                                        <td>Vago</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quinta-feira</td>
+                                        <td>Prog. p/Internet</td>
+                                        <td>18:30 - 22:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sexta-feira</td>
+                                        <td>Prog. Estrut.</td>
+                                        <td>18:30 - 22:30</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </details>
+                    </section>
                 </div>
             </div>
         </div>
         <hr>
     </div>
-    <p class="menu-paginacao"><a href="3_tabela_uf.html" class="prox">&lt;</a><a href="#">Página 4</a><a href="5_contato.html" class="prox">></a></p>
+    <p class="menu-paginacao"><a href="3_tabela_uf.html" class="prox">&lt;</a><a>Página 4</a><a
+            href="5_contato.html" class="prox">></a></p>
 </body>
 
 </html>
