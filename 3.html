@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeiras</title>
+    <style>
+        .container{
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .bandeira{
+            display: grid;
+            flex-shrink: 0;
+            width: 150px;
+            height: 90px;
+            border: 1px solid black;
+        }
+        #franca{
+            grid-template-areas: "azul . vermelho";
+        }
+        #azul{
+            grid-area: azul;
+            height: 100%;
+            background-color: blue;
+        }
+        #vermelho{
+            grid-area: vermelho;
+            background-color: red;
+        }
+        #amarelo{
+            grid-area: amarelo;
+            background-color: yellow;
+        }
+        #preto{
+            grid-area: preto;
+            background-color: black;
+        }
+        #germany{
+            grid-template-areas: 
+                "preto"
+                "vermelho"
+                "amarelo";
+        }
+        #japao{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #circulo{
+            display: block;
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bandeira" id="franca">
+            <div id="azul"></div>
+            <div id="vermelho"></div>
+        </div>
+        <div class="bandeira" id="germany">
+            <div id="preto"></div>
+            <div id="vermelho"></div>
+            <div id="amarelo"></div>
+        </div>
+        <div class="bandeira" id="japao"><div id="circulo"></div></div>
+    </div>
+</body>
+</html>
