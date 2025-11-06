@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras CSS</title>
+    <style>
+        @keyframes corzinha{
+            0%{
+                background-color: yellow;
+                border: 3px solid rgb(177, 177, 0);
+            }
+            25%{
+                background-color: chartreuse;
+                border: 3px solid rgb(93, 185, 0);
+            }
+            50%{
+                background-color: blue;
+                border: 3px solid rgb(0, 0, 139);
+                color: white;
+            }
+            75%{
+                background-color: red;
+                border: 3px solid rgb(151, 0, 0);
+                color: white;
+            }
+            100%{
+                background-color: yellow;
+                border: 3px solid rgb(177, 177, 0);
+            }
+        }
+
+
+        #exemplo{
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .container{
+            display: flex;
+            width: 60vw;
+            margin: 50px auto 0px auto;
+            justify-content: space-between;
+        }
+
+        #botao{
+            width: 0;
+        }
+
+        .box{
+            border: 1px solid black;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+        .box:first-child{
+            background-color: blueviolet;
+        }
+        .box:last-child{
+            background-color: darkgreen;
+        }
+
+        a{
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 20px;
+            color: black;
+            font-weight: bold;
+            font-size: large;
+            animation: corzinha 3s cubic-bezier(.05,.74,.88,.39) infinite;
+        }
+    </style>
+</head>
+<body>
+    <h2>O que é uma regra CSS</h2>
+    <p>A regra CSS é a regra que aplicará estilo a página HTML atráves de seletores, propriedades e valores indicados</p>
+    <ul>
+        <li>Seletor: é aquele que irá apontar em qual lugar o estilo deve ser aplicado</li>
+        <li>Propriedade: é a que "seleciona" o tipo do estilo que será formatado</li>
+        <li>Valores: os valores estão ligados com as propriedades e definem quanto ou como o estilo será configurado</li>
+    </ul>
+    <pre>
+        #exemplo { /* #exemplo é o nosso seletor */
+            background-color: blue; /* background-color, color, font-weight e text-decorarion são nossas propriedades */
+            color: white; 
+            font-weight: bold;
+            text-decoration: underline; /* blue, white, bold e underline são os valores que as propriedades devem aplicar no seletor */
+        }   
+    </pre>
+    <p id="exemplo">Esse é um exemplo de regra CSS</p>
+    <ol>
+        <li><h3>Pseudoclasse</h3></li>
+        <p>Dentro das regras CSS é possível realizar seleções mais específicas através das Pseudoclasses.</p>
+        <p>Em um conjunto de elementos, é possível realizar a seleção apenas do primeiro ou do último elemento conforme o exemplo a seguir:</p>
+        <pre>
+        .box:first-child{
+            background-color: blueviolet;
+        }
+        .box:last-child{
+            background-color: darkgreen;
+        }
+        </pre>
+        <div class="container">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <br>
+        <hr>
+        <li><h3>Animação feita com @keyframes</h3></li>
+        <div class="container" id="botao">
+            <a href="pudim.com.br">Botão</a>
+        </div>
+    </ol>
+</body>
+</html>
