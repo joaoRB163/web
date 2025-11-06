@@ -29,7 +29,7 @@ img {
     margin: 30px;
     padding: 20px;
     border: 2px solid black;
-    border-radius: 5%;
+    border-radius: 20px;
 }
 
 .box {
@@ -51,7 +51,7 @@ img {
     margin-bottom: 15px;
 }
 
-.container1 {
+.diferenca-internet-web {
     width: 30vw;
 }
 
@@ -68,9 +68,150 @@ th {
     border-collapse: collapse;
     text-align: center;
 }
-.box table{
+
+.box table {
     text-align: justify;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#perfil {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#curriculo {
+    display: grid;
+    grid-template-areas: "box1 box2";
+    grid-template-columns: 17vw 43vw;
+    border-radius: 20px;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
+#curriculo .box {
+    min-height: 50px;
+}
+
+#box1 {
+    grid-area: box1;
+    display: flex;
+    min-height: 60vh;
+    background-color: rgb(164, 80, 243);
+    flex-direction: column;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 5px solid rgb(103, 50, 153);
+    border-left: 5px solid rgb(103, 50, 153);
+    border-bottom: 5px solid rgb(103, 50, 153);
+}
+
+#box1 h2 {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+#box2 {
+    display: grid;
+    grid-area: box2;
+    grid-template-columns: 10px 1fr 1fr 10px;
+    grid-template-areas:
+        ". item1 item2 ."
+        ". item3 item4 .";
+    gap: 20px;
+    padding: 10px 0px 10px 0px;
+    background-color: rgb(216, 216, 216);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 5px solid rgb(80, 80, 80);
+    border-right: 5px solid rgb(80, 80, 80);
+    border-bottom: 5px solid rgb(80, 80, 80);
+    border-left: 5px dashed black;
+    text-align: justify;
+}
+
+.item1 {
+    grid-area: item1;
+}
+
+.item2 {
+    grid-area: item2;
+}
+
+.item3 {
+    grid-area: item3;
+}
+
+.item4 {
+    grid-area: item4;
+}
+
+#informacoes {
+    display: flex;
+    border: 5px solid rgb(103, 50, 153);
+    width: 90%;
+    height: 60%;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: rgb(129, 65, 189);
+    align-content: center;
+}
+
+#informacoes h3 {
+    font-size: 20px;
+    margin: auto;
+}
+
+#informacoes p {
+    font-size: 17px;
+    margin: auto auto auto 5px;
+}
+
+#informacoes a {
+    font-size: 16px;
+}
+
+#informacoes a:link,
+#informacoes a:visited {
+    color: white;
+}
+
+#informacoes a:hover {
+    color: blue;
+}
+
+.texto-curriculo {
+    text-align: justify;
+    min-height: 200px;
+    border: 3px solid rgb(80, 80, 80);
+    border-radius: 10px;
+    background-color: rgb(156, 156, 156);
+    padding: 0px 0px 0px 5px;
+}
+
+.texto-curriculo h2 {
+    text-align: left;
+    padding-bottom: 0px;
+    padding-left: 5px;
+}
+
+.texto-curriculo p,
+.texto-curriculo li {
+    padding: 3px 10px 10px 10px;
 }
