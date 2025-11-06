@@ -90,12 +90,18 @@ th {
 
 #curriculo {
     display: grid;
-    grid-template-areas: "box1 box2";
+    grid-template-areas:
+        "h1 h1"
+        "box1 box2";
     grid-template-columns: 17vw 43vw;
     border-radius: 20px;
     flex-direction: row;
     justify-content: center;
     margin: 20px;
+}
+
+#curriculo h1{
+    grid-area: h1;
 }
 
 #curriculo .box {
@@ -214,4 +220,31 @@ th {
 .texto-curriculo p,
 .texto-curriculo li {
     padding: 3px 10px 10px 10px;
+}
+
+.menu-paginacao { 
+    display: flex; 
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu-paginacao a {
+    text-decoration: none; 
+    color: #333; 
+    background-color: #f0f0f0; 
+    padding: 8px 15px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.menu-paginacao a:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.alterar {
+    font-size: 18px;
+    padding: 8px 18px;
 }
