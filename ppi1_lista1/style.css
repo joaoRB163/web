@@ -1,5 +1,6 @@
 body {
     margin-bottom: 60px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ol>li {
@@ -57,12 +58,6 @@ img {
     width: 30vw;
 }
 
-.main {
-    text-align: center;
-    margin: 40px;
-    position: relative;
-}
-
 table,
 td,
 th {
@@ -116,11 +111,11 @@ th {
     grid-area: h1;
 }
 
-#curriculo nav{
+#curriculo nav {
     grid-area: nav;
     width: 99.7%;
     background-color: rgb(103, 50, 153);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border: 3px solid rgb(103, 50, 153);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -128,39 +123,39 @@ th {
 }
 
 nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
-  margin: 0 20px;
+    margin: 0 20px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  transition: color 0.3s;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #007bff;
-  text-decoration: underline;
-} 
+    color: #007bff;
+    text-decoration: underline;
+}
 
 nav ul {
-  list-style-type: square;
-  margin-left: 25px;
-  color: black;
+    list-style-type: square;
+    margin-left: 25px;
+    color: black;
 }
 
 #curriculo .box {
     min-height: 50px;
-    
+
 }
 
 #box1 {
@@ -202,16 +197,17 @@ nav ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
-#box2 table{
+#box2 table {
     background-color: white;
     border: 2px solid rgb(103, 50, 153);
 }
-#box2 thead{
+
+#box2 thead {
     background-color: rgb(103, 50, 153);
     color: white;
 }
 
-#box2 tbody{
+#box2 tbody {
     font-weight: 600;
 }
 
@@ -273,7 +269,7 @@ nav ul {
     margin-right: 15%;
 }
 
-.texto-curriculo hr{
+.texto-curriculo hr {
     border-color: #333;
 }
 
@@ -305,7 +301,7 @@ nav ul {
     padding: 8px 18px;
 }
 
-.botao{
+.botao {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -320,6 +316,7 @@ nav ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.8s ease;
 }
+
 .botao:hover {
     background-color: rgb(97, 46, 145);
 }
@@ -330,23 +327,23 @@ summary h2 {
     padding: 0;
 }
 
-.texto-curriculo summary h2{
+.texto-curriculo summary h2 {
     padding-left: 5px;
     border-left: 6px solid rgb(129, 65, 189);
 }
 
-summary{
-    display: flex; 
-    align-content: center; 
+summary {
+    display: flex;
+    align-content: center;
     cursor: pointer;
 }
 
 summary::after {
-    content: '+'; 
-    font-size: 1.5em; 
+    content: '+';
+    font-size: 1.5em;
     font-weight: bold;
     margin-left: 10px;
-    color: rgb(129, 65, 189); 
+    color: rgb(129, 65, 189);
     transition: transform 0.3s;
     min-width: 15px;
     text-align: center;
@@ -356,7 +353,62 @@ details[open] summary::after {
     content: '-';
 }
 
-#experiencia span{
+#experiencia span {
     background-color: #52a6ff;
-    
+
+}
+
+form {
+    max-width: 600px;
+    min-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #673299;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #673299;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #731bc5;
+    outline: none;
+    box-shadow: 0 0 5px #4f18837c;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    background: #731bc5;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #8b0d7b;
 }
