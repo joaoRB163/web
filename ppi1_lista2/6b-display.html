@@ -4,19 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 6a</title>
+    <title>Atividade 6b</title>
     <style>
         body {
             display: grid;
             height: 100vh;
             margin: 0;
             grid-template-areas:
-                "box1"
-                "box2"
-                "box3"
-                "box4"
-                "a";
-            grid-template-rows: 1fr 1fr 1fr 1fr 0.1fr;
+                "box1 box2 box3 box4"
+                "a . . .";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 2fr 0.1fr;
         }
 
         .box {
@@ -43,6 +41,7 @@
             grid-area: box4;
             background-color: yellow;
         }
+        
         a{
             grid-area: a;
         }
@@ -54,7 +53,7 @@
     <div class="box" id="box2">2</div>
     <div class="box" id="box3">3</div>
     <div class="box" id="box4">4</div>
-    <a href="./6b-display.html">Atividade 6b</a>
+    <a href="./6c-display.html">Atividade 6c</a>
 </body>
 
 </html>
