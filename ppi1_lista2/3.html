@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incluir CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        span{
+            color: darkviolet;
+            background-color: chartreuse;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Formas de utilizar CSS em documentos HTML</h1>
+    <h2>CSS inline</h2>
+    <p>É possível utilizar CSS diretametne nas tags do HTML utilizando o atributo "style".</p>
+    <p style="color: red; background-color: lightblue; padding: 10px;">Esse é um exemplo de CSS inline</p>
+    <pre>
+        &lt;p style="color: red; background-color: lightblue; padding: 10px;">Esse é um exemplo de CSS inline&lt;/p>
+    </pre>
+    <h2>CSS utilizando a tag style</h2>
+    <p>É possível utilizar a tag &lt;style> para aplicar comandos de estilo via CSS</p>
+    <span>Esse é um exemplo de CSS aplicado com a tag style</span>
+    <pre>
+        &lt;style>
+        span{
+            color: darkviolet;
+            background-color: chartreuse;
+            padding: 10px;
+        }
+        &lt;/style>
+    </pre>
+    <h2>Folha de estilo fora do documento HTML</h2>
+    <p>É possível importar uma folha de estilo CSS sem a necessidade de escrever dentro do documento HTML.</p>
+    <pre>
+        &lt;link rel="stylesheet" href="style.css">
+    </pre>
+    <h3>Estilização por ID e CLASSE</h3>
+    <p id="id1">Esse é um exemplo de estilização via ID</p>
+    <pre>
+        &lt;p id="id1">Esse é um exemplo de estilização via ID&lt;/p>
+    </pre>
+    <p class="class1">Esse é um exemplo de estilização via classe</p>
+    <pre>
+        &lt;p class="class1">Esse é um exemplo de estilização via classe&lt;/p>
+    </pre>
+    <p><a href="./4.html">Atividade 4</a></p>
 </body>
 </html>
