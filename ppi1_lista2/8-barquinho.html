@@ -15,6 +15,30 @@
             overflow: hidden;
         }
 
+        .sol {
+            background-color: orange;
+            border: 30px solid yellow;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-30%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #centro {
+            background-color: orangered;
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            border: 30px solid darkorange;
+        }
+
         .barquinho {
             background-image: url("../img/barquinho.png");
             height: 300px;
@@ -69,6 +93,7 @@
             height: 80px;
             border-radius: 30px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.596);
+            z-index: 4;
         }
 
         .nuvem .nuvem {
@@ -152,6 +177,9 @@
 </head>
 
 <body>
+    <div class="sol">
+        <div id="centro"></div>
+    </div>
     <div class="barquinho"></div>
     <img src="../img/ondas.png" alt="" class="mar" id="wave1">
     <img src="../img/ondas.png" alt="" class="mar" id="wave2">
