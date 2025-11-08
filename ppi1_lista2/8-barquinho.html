@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barquinho</title>
+    <style>
+        body {
+            background: linear-gradient(to top, white, lightblue);
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .barquinho {
+            background-image: url("../img/barquinho.png");
+            height: 300px;
+            width: 300px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            z-index: 6;
+            position: absolute;
+            bottom: 12vh;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: barco 15s ease-in-out infinite alternate;
+        }
+
+        .mar {
+            width: 140vw;
+            height: 13vh;
+            left: -15vw;
+            position: absolute;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 7;
+            animation: onda 10s ease-in-out infinite alternate;
+        }
+
+        #wave2 {
+            width: 150vw;
+            bottom: 6.4vh;
+            z-index: 6;
+            animation-delay: -3s;
+            filter: brightness(0.8) contrast(1.5) hue-rotate(10deg);
+        }
+
+        #wave3 {
+            bottom: 13vh;
+            z-index: 5;
+            animation-delay: -6s;
+        }
+
+        #wave4 {
+            bottom: 18vh;
+            z-index: 4;
+            animation-delay: -9s;
+            filter: brightness(1.2) opacity(0.8);
+        }
+
+        .nuvem {
+            position: absolute;
+            background-color: white;
+            width: 200px;
+            height: 80px;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.596);
+        }
+
+        .nuvem .nuvem {
+            top: 35px;
+            left: 40px;
+        }
+
+        #nuvem2 .nuvem:last-child {
+            top: 50px;
+            left: -40px;
+        }
+
+        #nuvem1,
+        #nuvem2,
+        #nuvem3 {
+            left: 105vw;
+            animation: nuvem-movimento 30s linear infinite;
+        }
+
+        #nuvem1 {
+            top: 30px;
+            animation-duration: 35s;
+            animation-delay: 0s;
+        }
+
+        #nuvem2 {
+            top: 130px;
+            animation-duration: 25s;
+            animation-delay: 5s;
+        }
+
+        #nuvem3 {
+            top: 260px;
+            animation-duration: 40s;
+            animation-delay: 10s;
+        }
+
+
+        @keyframes nuvem-movimento {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-110vw - 200px));
+            }
+        }
+
+        @keyframes barco {
+            0% {
+                transform: translateX(-50%) rotate(-6deg);
+            }
+
+            25% {
+                transform: rotate(3deg);
+            }
+
+            50% {
+                transform: translateX(calc(-45% + 15px)) rotate(-8deg);
+            }
+
+            75% {
+                transform: rotate(6deg);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 15px)) rotate(-6deg);
+            }
+        }
+
+        @keyframes onda {
+            0% {
+                transform: translateX(-15vw);
+            }
+
+            100% {
+                transform: translateX(80px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="barquinho"></div>
+    <img src="../img/ondas.png" alt="" class="mar" id="wave1">
+    <img src="../img/ondas.png" alt="" class="mar" id="wave2">
+    <img src="../img/ondas.png" alt="" class="mar" id="wave3">
+    <img src="../img/ondas.png" alt="" class="mar" id="wave4">
+    <div class="nuvem" id="nuvem1">
+        <div class="nuvem"></div>
+    </div>
+    <div class="nuvem" id="nuvem2">
+        <div class="nuvem"></div>
+        <div class="nuvem"></div>
+    </div>
+    <div class="nuvem" id="nuvem3">
+        <div class="nuvem"></div>
+    </div>
+</body>
+
+</html>
