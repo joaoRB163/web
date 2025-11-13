@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+
+</head>
+<body>
+    <h2>Java Script</h2>
+    <button onclick="alert('Botão com JS inline')">Clique em mim</button>
+    <button id="botao1">Clique em mim</button>
+    <button></button>
+    
+    
+    <script>
+        function clique() {
+            alert('Botão com JS na tag <script>');
+        }
+
+        botao1.addEventListener("click", clique);
+    </script>
+    <script src="1.js"></script>
+</body>
+</html>

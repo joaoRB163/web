@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Variáveis JS</title>
+        <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button{
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+    </head>
+    <body>
+        <button>Cliques: 0</button>
+
+    </body>
+    <script>
+        let cont = 0;
+        let b=document.querySelector("button")
+        b.addEventListener("click", ()=>{
+            cont++;
+            b.innerHTML= "Cliques: "+ cont;
+        })
+
+    </script>
+</html>
