@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Random</title>
+</head>
+<body>
+    <button>Random</button>
+    <div></div>
+
+    
+    <script>
+        b=document.querySelector("button");
+        div=document.querySelector("div");
+
+        b.addEventListener("click", ()=>{
+            let min = Number.parseFloat(prompt("Informe o valor mínimo do intervalo"));
+            let max = Number.parseFloat(prompt("Informe o valor máximo do intervalo"))
+            let rand = Math.random();
+            max -= min; 
+            let random = (rand * max) + min;
+            console.log(random);
+            div.innerHTML=random
+        });
+    </script>
+</body>
+</html>
