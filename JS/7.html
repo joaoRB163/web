@@ -27,12 +27,32 @@
     <script>
         divs = document.querySelectorAll("div");
         let cont = 0;
+        let r1, r2, r3, r4, r5;
         document.body.addEventListener("keydown", (event)=>{
         
+            // if(event.code == "Space"){
+            //     divs.forEach((elemento)=>{
+            //         elemento.style.backgroundColor=`rgb(${randColor()}, ${randColor()}, ${randColor()})`;
+            //     })
+            // }
+            
             if(event.code == "Space"){
-                divs.forEach((elemento)=>{
-                    elemento.style.backgroundColor=`rgb(${randColor()}, ${randColor()}, ${randColor()})`;
-                })
+                if(cont == 0){
+                    r1=`rgb(${randColor()}, ${randColor()}, ${randColor()})`;
+                    div1.style.backgroundColor=r1;
+                    cont = 1;
+                } else {
+                    r5 = r4;
+                    r4 = r3;
+                    r3 = r2;
+                    r2 = r1;
+                    div2.style.backgroundColor=r2;
+                    div3.style.backgroundColor=r3;
+                    div4.style.backgroundColor=r4;
+                    div5.style.backgroundColor=r5;
+                    r1=`rgb(${randColor()}, ${randColor()}, ${randColor()})`;
+                    div1.style.backgroundColor=r1;
+                }
             }
         })
         
