@@ -4,8 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandeiras</title>
+    <style>
+        .container{
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .bandeira{
+            display: grid;
+            flex-shrink: 0;
+            width: 150px;
+            height: 90px;
+            border: 1px solid black;
+        }
+        #holanda{
+            grid-template-areas: 
+                "vermelho"
+                "."
+                "azul";
+        }
+        #azul{
+            grid-area: azul;
+            height: 100%;
+            background-color: blue;
+        }
+        #vermelho{
+            grid-area: vermelho;
+            background-color: red;
+        }
+        #verde{
+            grid-area: verde;
+            background-color: green;
+        }
+        #amarelo{
+            grid-area: amarelo;
+            background-color: yellow;
+        }
+        #preto{
+            grid-area: preto;
+            background-color: black;
+        }
+        #germany{
+            grid-template-areas: 
+                "preto"
+                "vermelho"
+                "amarelo";
+        }
+        #japao{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #italia{
+            grid-template-areas: "verde . vermelho";
+        }
+        #circulo-vermelho{
+            display: block;
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        #brasil {
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #losango {
+            width: 85%;
+            height: 85%;
+            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        #circulo-azul {
+            background-color: #002776;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="bandeira" id="japao"><div id="circulo-vermelho"></div></div>
+        <div class="bandeira" id="germany">
+            <div id="preto"></div>
+            <div id="vermelho"></div>
+            <div id="amarelo"></div>
+        </div>
+        <div class="bandeira" id="holanda">
+            <div id="vermelho"></div>
+            <div id="azul"></div>
+        </div>
+        <div class="bandeira" id="italia">
+            <div id="verde"></div>
+            <div id="vermelho"></div>
+        </div>
+        <div class="bandeira" id="brasil">
+            <div id="losango">
+                <div id="circulo-azul"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
