@@ -1,5 +1,8 @@
+i = 0;
 function bla() {
-    console.log("Botão com arquivo JS importado");
+    i++;
+    console.log("Botão com arquivo JS importado - " + i);
+
 }
 
 b = document.querySelector("button:nth-child(4)");
