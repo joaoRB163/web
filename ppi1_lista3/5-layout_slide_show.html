@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .slide {
+            display: flex;
+            border-radius: 20px;
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.6);
+            width: 45%;
+            height: 600px;
+            gap: 20px;
+        }
+
+        .box {
+            position: relative;
+            margin: 20px 0;
+            flex-grow: 1;
+            border: 1px solid black;
+            border-radius: 30px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            align-content: end;
+            justify-items: center;
+            padding: 10px;
+            transition: flex-grow 0.9s ease-in-out;
+        }
+
+        .box:first-child {
+            margin-left: 20px;
+        }
+
+        .box:last-child {
+            margin-right: 20px;
+        }
+
+        #slide1 {
+            background-image: url("../img/paisagem1.jpeg");
+        }
+
+        #slide2 {
+            background-image: url("../img/paisagem2.jpeg");
+        }
+
+        #slide3 {
+            background-image: url("../img/paisagem3.jpeg");
+        }
+
+        #slide4 {
+            background-image: url("../img/paisagem4.jpeg");
+        }
+
+        #slide5 {
+            background-image: url("../img/paisagem5.jpeg");
+        }
+
+        .icon {
+            display: flex;
+            background-color: white;
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+            transition: transform 0.9s ease-in-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box:hover {
+            flex-grow: 10;
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+
+        .box:hover .icon {
+            transform: translateX(-100px);
+        }
+
+        #slide1,
+        #slide2,
+        #slide3,
+        #slide4,
+        #slide5 {
+            flex-shrink: 2;
+        }
+
+        h2 {
+            color: white;
+            font-weight: bold;
+            opacity: 0;
+            width: 300px;
+            height: 0;
+            margin: 0;
+            transition: opacity 1s ease-in;
+            position: absolute;
+            bottom: 70px;
+            left: 100px;
+        }
+        
+        p{
+            color: white;
+            opacity: 0;
+            width: 300px;
+            height: 0;
+            margin: 0;
+            position: absolute;
+            transition: opacity 1s ease-in;
+            left: 110px;
+            bottom: 45px;
+        }
+
+        .box:hover h2, .box:hover p {
+            opacity: 1;
+            width: 300px;
+        }
+        .icon img{
+            width: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide">
+        <div class="box" id="slide1">
+            <div class="icon">
+                <img src="../img/icon1.jpeg" alt="">
+            </div>
+            <h2>Repellendus</h2>
+            <p>deleniti sint dolorem</p>
+        </div>
+        <div class="box" id="slide2">
+            <div class="icon">
+                <img src="../img/icon2.jpeg" alt="">
+            </div>
+            <h2>Oretemauw</h2>
+            <p>Omuke trughte a otufta</p>
+        </div>
+        <div class="box" id="slide3">
+            <div class="icon">
+                <img src="../img/icon3.jpeg" alt="">
+            </div>
+            <h2>Consectetur</h2>
+            <p>Adipisicing elit</p>
+        </div>
+        <div class="box" id="slide4">
+            <div class="icon">
+                <img src="../img/icon4.jpeg" alt="">
+            </div>
+            <h2>Tenetur porro</h2>
+            <p>Laboriosam eveniet est</p>
+        </div>
+        <div class="box" id="slide5">
+            <div class="icon">
+                <img src="../img/icon5.jpeg" alt="">
+            </div>
+            <h2>Aspernatur</h2>
+            <p>Repudiandae nesciunt</p>
+        </div>
+    </div>
+</body>
+
+</html>
