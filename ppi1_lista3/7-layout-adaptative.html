@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout adaptativo</title>
+    <style>
+        @media screen and (max-width: 500px) {
+            .grid{
+                display: grid;
+                gap: 10px;
+                padding: 0 10px 0 10px;
+                height: 95vh;
+                grid-template-areas: 
+                    "h"
+                    "b"
+                    "l"
+                    "m"
+                    "r"
+                    "low"
+                    "f";
+                grid-template-rows: 1fr 1fr 1fr 10fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media screen and (min-width: 501px) {
+            .grid {
+            display: grid;
+            padding: 0 30px 0 30px;
+            height: 95vh;
+            gap: 10px;
+            grid-template-areas:
+                "h h h h"
+                "l b b r"
+                "l m m r"
+                "l m m r"
+                "l low low r"
+                "f f f f";
+                grid-template-columns: 0.3fr 2fr 2fr 0.3fr;
+                grid-template-rows: 1fr 1fr 4fr 4fr 1fr 1fr;
+        }
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            align-content: center;
+            font-weight: bold;
+        }
+
+        .box{
+            text-align: center;
+            align-content: center;
+        }
+        
+        #header {
+            grid-area: h;
+            background-color: yellow;
+        }
+
+        #banner {
+            grid-area: b;
+            background-color: red;
+        }
+
+        #left {
+            grid-area: l;
+            background-color: green;
+        }
+
+        #right {
+            grid-area: r;
+            background-color: yellow;
+        }
+
+        #main {
+            grid-area: m;
+            background-color: deepskyblue;
+        }
+
+        #low {
+            grid-area: low;
+            background-color: green;
+        }
+
+        #footer {
+            grid-area: f;
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="box" id="header">Header</div>
+        <div class="box" id="banner">Banner</div>
+        <div class="box" id="left">Left Aside</div>
+        <div class="box" id="right">Right Aside</div>
+        <div class="box" id="main">Main Content</div>
+        <div class="box" id="low">Low Content</div>
+        <div class="box" id="footer">Footer</div>
+    </div>
+</body>
+
+</html>
