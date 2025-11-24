@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contatos</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            justify-items: center;
+            align-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #363636;
+        }
+        .box{
+            width: 600px;
+            display: flexbox;
+            flex-direction: column;
+            padding: 10px;
+            background-color: #363636;
+            border-radius: 10px;
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.9);
+        }
+        .contato{
+            margin-top: 5px;
+            display: block;
+            height: 100px;
+            align-content: center;
+        }
+        .contato img{
+            border-radius: 50%;
+            width: 95px;
+            float: left;
+            margin-right: 15px;
+        }
+        .contato h3{
+            margin: 20px 0 0 0;
+            font-weight: 500;
+            color: rgb(204, 204, 204);
+        }
+        .contato p{
+            margin: 5px 0 0 0;
+            text-indent: 15px;
+            color: #b1b1b1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="contato">
+            <img src="../img/fake_person/fake1.jpeg" alt="">
+            <h3>Isabela Santos</h3>
+            <p>Entendi seu ponto. Acho que é o momento de dar um tempo...</p>
+        </div>
+        <hr>
+        <div class="contato">
+            <img src="../img/fake_person/fake2.jpeg" alt="">
+            <h3>Mateus Costa</h3>
+            <p>A risada aqui foi demais kkkkkk! Valeu por hoje, irmão. Me a...</p>
+        </div>
+        <hr>
+        <div class="contato">
+            <img src="../img/fake_person/fake3.jpeg" alt="">
+            <h3>Leonardo</h3>
+            <p>Fechado! Já confirmei o pagamento e mando o comprovante...</p>
+        </div>
+        <hr>
+        <div class="contato">
+            <img src="../img/fake_person/fake4.jpeg" alt="">
+            <h3>Helen Almeida</h3>
+            <p>Combinado, mãe. Me liga amanhã pra eu te contar as novi...</p>
+        </div>
+    </div>
+</body>
+</html>
