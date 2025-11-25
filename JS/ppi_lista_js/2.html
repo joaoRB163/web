@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Execução de Script</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                height: 100vh;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button>Clique aqui para Executar</button>
+        <p id="number"></p>
+        <p id="string"></p>
+        <p id="boolean"></p>
+        <p id="objeto"></p>
+        <p id="indefinido"></p>
+        <p id="null"></p>
+        <p id="array"></p>
+        <script>
+            let idade = 18;
+            let nome = "João";
+            let bool = true;
+            let user = { nome: "Robin Hood", idade: 25 };
+            let nulo = null;
+            let semVal;
+            let array = [0, 1, 1, 2, 3, 5, 8, 13, 21];
+            let pnumber = document.querySelector("#number");
+            let pstring = document.querySelector("#string");
+            let pboolean = document.querySelector("#boolean");
+            let pobjeto = document.querySelector("#objeto");
+            let punde = document.querySelector("#indefinido");
+            let pnull = document.querySelector("#null");
+            let parray = document.querySelector("#array");
+            let b = document.querySelector("button");
+
+            b.addEventListener("click", () => {
+                pnumber.innerHTML = `Idade: ${idade} - ${typeof (idade)}`;
+                pstring.innerHTML = `Nome: ${nome} - ${typeof (nome)}`;
+                pboolean.innerHTML = `Boleano: ${bool} - ${typeof (bool)}`;
+                pobjeto.innerHTML = `Usuário: ${JSON.stringify(user)} - ${typeof (user)}`;
+                pnull.innerHTML = `Nulo: ${nulo} - ${typeof(nulo)}`;
+                punde.innerHTML = `Infeinido: ${semVal} - ${typeof(semVal)}`;
+                parray.innerHTML = `Array: ${array.join(', ')} - ${typeof(array)}`
+
+            })
+        </script>
+    </body>
+
+    </html>
