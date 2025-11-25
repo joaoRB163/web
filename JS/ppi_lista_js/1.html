@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript?</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container{
+            width: 33%;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">O que é JavaScript?</h1>
+    <div class="container" id="c1">
+        <p id="paragrafo1">O JavaScript foi criado para tornar as páginas web mais dinâmicas e interativas no navegador, aliviando o
+            processamento do servidor ao realizar validações e manipulações simples de páginas WEB. Essa execução no
+            navegador ocorre em um ambiente fechado chamado de sandbox, que impede que o código acesse recursos do sistema
+            operacional do usuário por motivos de segurança.<br>Para interagir com a página, são fornecidos objetos globais
+            para manipulação de uma página, como: <strong>document, consoles</strong> e <strong>alert</strong></p>
+        <p id="hora"></p>
+    </div>
+
+    <script>
+        let p = document.getElementById("hora")
+        
+        console.log("Olá mundão sem alma nem coração!");
+        alert("Olá pessoas que estão acessando esse documento!");
+        
+        atualizarHora();
+        setInterval(atualizarHora, 1000);
+
+
+        function atualizarHora(){
+            let d = new Date();
+            p.innerHTML=`<p>Hora: ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}</p>`
+        }
+
+        
+    </script>
+</body>
+
+</html>
