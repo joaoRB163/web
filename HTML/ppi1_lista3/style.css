@@ -1,0 +1,23 @@
+.menu-paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-paginacao a {
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+.menu-paginacao a:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}

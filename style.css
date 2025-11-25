@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #797979;
+    flex-direction: column;
+    color: white;
+}
+
+.card {
+    display: flex;
+    max-width: 50%;
+    min-height: 50%;
+    justify-content: center;
+    border-radius: 25px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+    
+a{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    align-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: #b841a8;
+    font-weight: bold;
+    margin: 10px;
+    padding: 20px;
+    border: 10px solid #5e005e;
+    border-radius: 25px;
+    box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+h1{
+    font-size: 45px;
+    margin: 0;
+    margin-top: 35px;
+    padding: 0;
+}
+
+a:hover{
+    background-color: #6b016b;
+    border-color: #a000a0;
+    text-decoration: underline;
+}
+
+#box1 {
+    grid-area: box1;
+}
+
+#box2 {
+    grid-area: box2;
+}
+
+#box3 {
+    grid-area: box3;
+}
+
+#box4 {
+    grid-area: box4;
+}
+
+#box5 {
+    grid-area: box5;
+}
+
+#box6 {
+    grid-area: box6;
+}
+
+#box7 {
+    grid-area: box7;
+}
+
+#box8 {
+    grid-area: box8;
+}
+
+#box9 {
+    grid-area: box9;
+}
+
+#box10 {
+    grid-area: box10;
+}
+
+#box11 {
+    grid-area: box11;
+}
+
+#box12 {
+    grid-area: box12;
+}
+
+#box13 {
+    grid-area: box13;
+}
+
+#box14 {
+    grid-area: box14;
+}
+
+#box15 {
+    grid-area: box15;
+}
+
+#box16 {
+    grid-area: box16;
+}
+
+#box17 {
+    grid-area: box17;
+}
