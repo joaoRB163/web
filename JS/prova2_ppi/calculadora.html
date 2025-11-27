@@ -166,54 +166,65 @@
 
         num1.addEventListener("click", ()=>{
             p.innerHTML+=`1`;
+            verificar2 = true;
             verificar3 = true;
         })
         num2.addEventListener("click", ()=>{
             p.innerHTML+=`2`;
+            verificar2 = true;
             verificar3 = true;
         })
         num3.addEventListener("click", ()=>{
             p.innerHTML+=`3`;
+            verificar2 = true;
             verificar3 = true;
         })
         num4.addEventListener("click", ()=>{
             p.innerHTML+=`4`;
+            verificar2 = true;
             verificar3 = true;
         })
         num5.addEventListener("click", ()=>{
             p.innerHTML+=`5`;
+            verificar2 = true;
             verificar3 = true;
         })
         num6.addEventListener("click", ()=>{
             p.innerHTML+=`6`;
+            verificar2 = true;
             verificar3 = true;
         })
         num7.addEventListener("click", ()=>{
             p.innerHTML+=`7`;
+            verificar2 = true;
             verificar3 = true;
         })
         num8.addEventListener("click", ()=>{
             p.innerHTML+=`8`;
+            verificar2 = true;
             verificar3 = true;
         })
         num9.addEventListener("click", ()=>{
             p.innerHTML+=`9`;
+            verificar2 = true;
             verificar3 = true;
         })
         num0.addEventListener("click", ()=>{
             p.innerHTML+=`0`;
+            verificar2 = true;
             verificar3 = true;
         })
         del.addEventListener("click", ()=>{
             p.innerHTML=``;
             verificar1 = true;
             verificar3 = true;
+            verificar2 = false;
         })
         soma.addEventListener("click", ()=>{
             if(p.textContent.length >= 1 && verificar3){
                 p.innerHTML+=`+`;
                 verificar1 = true;
-                verificar2 = true;
+                verificar2 = false;
             }
             verificar3 = false;
         })
@@ -221,7 +232,7 @@
             if(p.textContent.length >= 1 && verificar3){
                 p.innerHTML+=`-`;
                 verificar1 = true;
-                verificar2 = true;
+                verificar2 = false;
             }
             verificar3 = false;
         })
@@ -229,7 +240,7 @@
             if(p.textContent.length >= 1 && verificar3){
                 p.innerHTML+=`*`;
                 verificar1 = true;
-                verificar2 = true;
+                verificar2 = false;
             }
             verificar3 = false;
         })
@@ -237,24 +248,26 @@
             if(p.textContent.length >= 1 && verificar3){
                 p.innerHTML+=`/`;
                 verificar1 = true;
-                verificar2 = true;
+                verificar2 = false;
             }
             verificar3 = false;
         })
         ponto.addEventListener("click", ()=>{
-            if(p.textContent.length == 0 || verificar2){
+            if((p.textContent.length == 0 && !verificar2) || (p.textContent.length > 1 && !verificar2)){
                 p.innerHTML+=`0.`;
-                verificar2 = false;
+                verificar2 = true;
+                verificar3 = false;
             } else if (p.textContent.length >= 1 && verificar1) {
                 p.innerHTML+=`.`;
+                verificar3 = false;
             }
             verificar1 = false;
-            verificar3 = false;
         })
         igual.addEventListener("click", ()=>{
             if(p.textContent.length != 0){
                 p.innerHTML = `${eval(p.textContent)}`
             }
+            verificar2 = true;
         })
     </script>
     </body>
