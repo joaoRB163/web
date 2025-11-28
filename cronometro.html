@@ -1,11 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronometro</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+            background-color: #3a3a3a;
+        }
+        
+        .box{
+            flex-shrink: 0;
+            flex-grow: 1;
+        }
+        
+        #box1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 90px;
+        }
+        
+        #box2{
+            display: flex;
+            background-color: white;
+            margin: 20px;
+            border-radius: 25px;
+            align-items: center;
+        }
+
+        #contagem {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            
+        }
+        
+        #titulo{
+            text-align: center;
+            align-content: center;
+            width: 25%;
+            height: 98%;
+            border-right: 1px solid gray;
+        }
+
+        #limpar{
+                margin: 20px auto 20px auto;
+        }
+
+        button{
+            border: 0;
+            font-size: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: orangered;
+        }
+        button:hover{
+            background-color: #ff723e;
+
+        }
+        li:nth-child(2n){
+            background-color: rgba(59, 59, 59, 0.336);
+            margin-right: 15px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="box" id="box1">
+            <div id="timer">00:00:00:00</div>
+            <div id="botoes">
+                <button id="zerar">Zerar</button>
+                <button id="start">Iniciar</button>
+                <button id="parar">Parar</button>
+            </div>
+        </div>
+        <div class="box" id="box2">
+            <div id="titulo">
+                <h1>Paradas</h1>
+            </div>
+            <div id="contagem">
+                <ol id="paradas">
+                </ol>
+                <button id="limpar">Limpar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timer = document.querySelector("#timer");
+        let zerar = document.querySelector("#zerar");
+        let start = document.querySelector("#start");
+        let parar = document.querySelector("#parar");
+        let lista = document.querySelector("#paradas");
+        let h = 0, m = 0, s = 0, c = 0;
+        
+        function ContarTimer(){
+            c++;
+            if(c == 100){
+                c = 0;
+                s++;
+            }
+            if(s == 60){
+                s = 0;
+                m++;
+            }
+            if(m == 60){
+                m = 0;
+                h++;
+            }
+            timer.innerHTML=`${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}:${c.toString().padStart(3, '0')}`
+        }
+
+    </script>
 </body>
+
 </html>
