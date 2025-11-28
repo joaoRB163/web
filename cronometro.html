@@ -16,11 +16,12 @@
             display: flex;
             height: 100%;
             background-color: #3a3a3a;
+            justify-content: center;
         }
 
         .box {
             flex-shrink: 0;
-            flex-grow: 1;
+            width: 45%;
         }
 
         #box1 {
@@ -63,6 +64,11 @@
             height: 0;
             width: 80%;
         }
+
+        #timer {
+            width: 80%;
+            text-align: center;
+        }
         
         #limpar {
             margin: 20px auto 20px auto;
@@ -94,7 +100,7 @@
 <body>
     <div class="container">
         <div class="box" id="box1">
-            <div id="timer">00:00:00</div>
+            <div id="timer">00:00:00:00</div>
             <div id="botoes">
                 <button id="zerar">Zerar</button>
                 <button id="start">Iniciar</button>
@@ -126,11 +132,15 @@
         let parar = document.querySelector("#parar");
         let lista = document.querySelector("#paradas");
         let limpar = document.querySelector("#limpar");
-        let h = 0, m = 0, s = 0, tempoFormatado = "00:00:00", timerIntervalo;
+        let h = 0, m = 0, s = 0, c = 0, tempoFormatado = "00:00:00:00", timerIntervalo;
         let contagem = false
 
         function ContarTimer() {
-            s++
+            c++
+            if(c == 100){
+                c = 0;
+                s++;
+            }
             if (s == 60) {
                 s = 0;
                 m++;
@@ -139,7 +149,7 @@
                 m = 0;
                 h++;
             }
-            tempoFormatado = h.toString().padStart(2, '0') + ":" + m.toString().padStart(2, '0') + ":" + s.toString().padStart(2, '0');
+            tempoFormatado = h.toString().padStart(2, '0') + ":" + m.toString().padStart(2, '0') + ":" + s.toString().padStart(2, '0') + ":" + c.toString().padStart(2, '0');
             timer.innerHTML = `${tempoFormatado}`
         }
 
@@ -149,21 +159,22 @@
                 contagem = false;
                 start.innerHTML = `Iniciar`
             } else {
-                timerIntervalo = setInterval(ContarTimer, 1000);
+                timerIntervalo = setInterval(ContarTimer, 10);
                 contagem = true;
                 start.innerHTML = `Pausar`
             }
         }
 
         function ZerarTimer() {
+            c = 0;
             s = 0;
             m = 0;
             h = 0;
             clearInterval(timerIntervalo);
             contagem = false;
-            timer.innerHTML = `00:00:00`;
+            timer.innerHTML = `00:00:00:00`;
             start.innerHTML = `Iniciar`;
-            tempoFormatado = "00:00:00";
+            tempoFormatado = "00:00:00:00";
             lista.innerHTML = ``
         }
 
