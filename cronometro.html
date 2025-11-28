@@ -42,7 +42,9 @@
 
         #contagem {
             display: flex;
+            height: 90%;
             flex-direction: column;
+            overflow: auto;
             flex-grow: 1;
             
         }
@@ -56,7 +58,8 @@
         }
 
         #limpar{
-                margin: 20px auto 20px auto;
+            margin: 20px auto 20px auto;
+            color: black;
         }
 
         button{
@@ -65,6 +68,8 @@
             padding: 15px;
             border-radius: 10px;
             background-color: orangered;
+            font-weight: bolder;
+            color: white;
         }
         button:hover{
             background-color: #ff723e;
@@ -80,7 +85,7 @@
 <body>
     <div class="container">
         <div class="box" id="box1">
-            <div id="timer">00:00:00:00</div>
+            <div id="timer">00:00:00</div>
             <div id="botoes">
                 <button id="zerar">Zerar</button>
                 <button id="start">Iniciar</button>
@@ -93,6 +98,7 @@
             </div>
             <div id="contagem">
                 <ol id="paradas">
+                    
                 </ol>
                 <button id="limpar">Limpar</button>
             </div>
@@ -105,14 +111,12 @@
         let start = document.querySelector("#start");
         let parar = document.querySelector("#parar");
         let lista = document.querySelector("#paradas");
-        let h = 0, m = 0, s = 0, c = 0;
+        let limpar = document.querySelector("#limpar");
+        let h = 0, m = 0, s = 0, tempoFormatado = "00:00:00", timerIntervalo;
+        let contagem = false
         
         function ContarTimer(){
-            c++;
-            if(c == 100){
-                c = 0;
-                s++;
-            }
+            s++
             if(s == 60){
                 s = 0;
                 m++;
@@ -121,9 +125,42 @@
                 m = 0;
                 h++;
             }
-            timer.innerHTML=`${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}:${c.toString().padStart(3, '0')}`
+            tempoFormatado = h.toString().padStart(2, '0') + ":" + m.toString().padStart(2, '0') + ":" + s.toString().padStart(2, '0');
+            timer.innerHTML=`${tempoFormatado}`
         }
 
+        start.addEventListener("click", ()=>{
+            if(contagem){
+                clearInterval(timerIntervalo);
+                contagem = false;
+                start.innerHTML = `Iniciar`
+            } else {
+                timerIntervalo = setInterval(ContarTimer, 1000);
+                contagem = true;
+                start.innerHTML = `Pausar`
+            }
+        })
+        
+        zerar.addEventListener("click", ()=>{
+            s = 0;
+            m = 0;
+            h = 0;
+            clearInterval(timerIntervalo);
+            contagem = false;
+            timer.innerHTML = `00:00:00`;
+            start.innerHTML = `Iniciar`;
+            tempoFormatado = "00:00:00";
+            lista.innerHTML = ``
+        })
+
+        parar.addEventListener("click", ()=>{
+            lista.innerHTML+=`<li>${tempoFormatado}</li>`
+        })
+        
+        limpar.addEventListener("click", ()=>{
+            lista.innerHTML = ``
+        })
+        
     </script>
 </body>
 
