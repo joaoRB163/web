@@ -131,7 +131,7 @@
             timer.innerHTML = `${tempoFormatado}`
         }
 
-        start.addEventListener("click", () => {
+        function IniciarTimer(){
             if (contagem) {
                 clearInterval(timerIntervalo);
                 contagem = false;
@@ -141,9 +141,9 @@
                 contagem = true;
                 start.innerHTML = `Pausar`
             }
-        })
+        }
 
-        zerar.addEventListener("click", () => {
+        function ZerarTimer(){
             s = 0;
             m = 0;
             h = 0;
@@ -153,10 +153,22 @@
             start.innerHTML = `Iniciar`;
             tempoFormatado = "00:00:00";
             lista.innerHTML = ``
+        }
+
+        function PararTimer(){
+            lista.innerHTML += `<li>${tempoFormatado}</li>`
+        }
+
+        start.addEventListener("click", () => {
+            IniciarTimer();
+        })
+
+        zerar.addEventListener("click", () => {
+            ZerarTimer();
         })
 
         parar.addEventListener("click", () => {
-            lista.innerHTML += `<li>${tempoFormatado}</li>`
+            PararTimer();
         })
 
         limpar.addEventListener("click", () => {
