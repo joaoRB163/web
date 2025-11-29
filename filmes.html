@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Filmes OMDB</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #2a2b36;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        #busca {
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        #resultado {
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filme {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            min-height: 500px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.6);
+            background-color: #1f2358;
+            color: white;
+        }
+
+        .filme img {
+            max-height: 250px;
+            max-width: 200px;
+            margin-top: 15px;
+        }
+
+        .filme h2 {
+            text-align: center;
+        }
+
+        .info {
+            display: grid;
+            width: 85%;
+            grid-template-areas:
+                "ano genero"
+                "sinopse nota";
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 0.5fr 0.5fr;
+            font-size: small;
+            gap: 0;
+        }
+
+        #ano {
+            grid-area: ano;
+            text-align: left;
+        }
+
+        #genero {
+            grid-area: genero;
+            text-align: right;
+        }
+
+        #nota {
+            grid-area: nota;
+            text-align: right;
+        }
+
+        #sinopse {
+            grid-area: sinopse;
+        }
+
+        .elenco {
+            text-align: left;
+            width: 85%;
+            margin: 0;
+        }
+
+        .elenco:last-of-type {
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .elenco:first-of-type {
+            font-weight: bold;
+        }
+
+        .sinopse {
+            height: 80px;
+            width: 85%;
+            text-align: justify;
+            text-indent: 20px;
+            padding: 5px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #515696;
+        }
+
+        .sinopse::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sinopse::-webkit-scrollbar-track {
+            background: #515696;
+            border-radius: 20px;
+        }
+
+        .sinopse::-webkit-scrollbar-thumb {
+            background-color: #3b3f75;
+            border-radius: 10px;
+        }
+
+        #titulo {
+            width: 30%;
+            background-color: #2a2b36;
+            border: 0;
+            border-bottom: 3px solid #1f2358;
+            border-radius: 5px;
+            color: white;
+            text-align: right;
+        }
+
+        #buscar {
+            background-color: dodgerblue;
+            border: 0;
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="busca">
+            <input type="text" id="titulo" placeholder="Digite o nome do Filme">
+            <button id="buscar">Buscar</button>
+        </div>
+        <div class="box" id="resultado">
+
+        </div>
+    </div>
+
+
+
+    <script>
+        let API_KEY = "f77bfada"
+        let inputFilme = document.querySelector("#titulo");
+        let button = document.querySelector("#buscar");
+        let divResultado = document.querySelector("#resultado");
+
+        button.addEventListener("click", () => {
+            divResultado.innerHTML = ``;
+            fetch(`http://www.omdbapi.com/?s=${inputFilme.value}&apikey=${API_KEY}`).then((response) => {
+                return response.json();
+            }).then((data) => {
+                console.log(data);
+                data.Search.forEach((f) => {
+                    fetch(`http://www.omdbapi.com/?i=${f.imdbID}&apikey=${API_KEY}`)
+                        .then((response) => response.json())
+                        .then((filme) => {
+                            let divfilme =
+                                `<div class="filme">
+                                    <img src="${filme.Poster}" alt="Pôster do filme">
+                                    <h2>${filme.Title}</h2>
+                                    <div class="info">
+                                        <p id="ano">Ano: ${filme.Year}</p>
+                                        <p id="genero">Gênero: ${filme.Genre}</p>
+                                        <p id="nota">IMDB Rating ⭐${filme.imdbRating}</p>
+                                        <p id="sinopse">Sinopse</p>
+                                    </div>
+                                    <div class="sinopse">
+                                        <p>${filme.Plot}</p>
+                                    </div>
+                                    <p class="elenco">Elenco: </p>
+                                    <p class="elenco">${filme.Actors}</p>
+                                </div>`;
+                            divResultado.innerHTML += divfilme;
+                        });
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>
