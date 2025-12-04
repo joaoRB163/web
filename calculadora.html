@@ -152,126 +152,116 @@
             <button class="nums botao" id="num0">0</button>
             <button class="botao" id="ponto">.</button>
             <button class="botao" id="igual">=</button>
-            <button class="botao" id="delete">AC</button>
+            <button class="botao" id="del">AC</button>
         </div>
 
         <script>
-        let p = document.querySelector("#entrada");
-        let nums = document.querySelectorAll(".nums");
-        let del = document.querySelector("#delete");
-        let ponto = document.querySelector("#ponto");
-        let soma = document.querySelector("#soma");
-        let sub = document.querySelector("#sub");
-        let mult = document.querySelector("#mult");
-        let divisao = document.querySelector("#divisao");
-        let verificar1 = true, verificar2 = false, verificar3 = true;
-
-        
+        let verificarPonto = true, verificarDigito = false, verificarOperador = false;
 
         num1.addEventListener("click", ()=>{
-            p.innerHTML+=`1`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`1`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num2.addEventListener("click", ()=>{
-            p.innerHTML+=`2`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`2`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num3.addEventListener("click", ()=>{
-            p.innerHTML+=`3`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`3`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num4.addEventListener("click", ()=>{
-            p.innerHTML+=`4`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`4`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num5.addEventListener("click", ()=>{
-            p.innerHTML+=`5`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`5`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num6.addEventListener("click", ()=>{
-            p.innerHTML+=`6`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`6`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num7.addEventListener("click", ()=>{
-            p.innerHTML+=`7`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`7`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num8.addEventListener("click", ()=>{
-            p.innerHTML+=`8`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`8`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num9.addEventListener("click", ()=>{
-            p.innerHTML+=`9`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`9`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         num0.addEventListener("click", ()=>{
-            p.innerHTML+=`0`;
-            verificar2 = true;
-            verificar3 = true;
+            entrada.innerHTML+=`0`;
+            verificarDigito = true;
+            verificarOperador = false;
         })
         del.addEventListener("click", ()=>{
-            p.innerHTML=``;
-            verificar1 = true;
-            verificar3 = true;
-            verificar2 = false;
+            entrada.innerHTML=``;
+            verificarPonto = true;
+            verificarOperador = false;
+            verificarDigito = false;
         })
         soma.addEventListener("click", ()=>{
-            if(p.textContent.length >= 1 && verificar3){
-                p.innerHTML+=`+`;
-                verificar1 = true;
-                verificar2 = false;
+            if(entrada.textContent.length >= 1 && !verificarOperador){
+                entrada.innerHTML+=`+`;
+                verificarPonto = true;
+                verificarDigito = false;
             }
-            verificar3 = false;
+            verificarOperador = true;
         })
         sub.addEventListener("click", ()=>{
-            if(p.textContent.length >= 1 && verificar3){
-                p.innerHTML+=`-`;
-                verificar1 = true;
-                verificar2 = false;
+            if(entrada.textContent.length >= 1 && !verificarOperador){
+                entrada.innerHTML+=`-`;
+                verificarPonto = true;
+                verificarDigito = false;
             }
-            verificar3 = false;
+            verificarOperador = true;
         })
         mult.addEventListener("click", ()=>{
-            if(p.textContent.length >= 1 && verificar3){
-                p.innerHTML+=`*`;
-                verificar1 = true;
-                verificar2 = false;
+            if(entrada.textContent.length >= 1 && !verificarOperador){
+                entrada.innerHTML+=`*`;
+                verificarPonto = true;
+                verificarDigito = false;
             }
-            verificar3 = false;
+            verificarOperador = true;
         })
         divisao.addEventListener("click", ()=>{
-            if(p.textContent.length >= 1 && verificar3){
-                p.innerHTML+=`/`;
-                verificar1 = true;
-                verificar2 = false;
+            if(entrada.textContent.length >= 1 && !verificarOperador){
+                entrada.innerHTML+=`/`;
+                verificarPonto = true;
+                verificarDigito = false;
             }
-            verificar3 = false;
+            verificarOperador = true;
         })
         ponto.addEventListener("click", ()=>{
-            if((p.textContent.length == 0 && !verificar2) || (p.textContent.length > 1 && !verificar2)){
-                p.innerHTML+=`0.`;
-                verificar2 = true;
-                verificar3 = false;
-            } else if (p.textContent.length >= 1 && verificar1) {
-                p.innerHTML+=`.`;
-                verificar3 = false;
+            if((entrada.textContent.length == 0 && !verificarDigito) || (entrada.textContent.length > 1 && !verificarDigito)){
+                entrada.innerHTML+=`0.`;
+                verificarDigito = true;
+                verificarOperador = false;
+            } else if (entrada.textContent.length >= 1 && verificarPonto) {
+                entrada.innerHTML+=`.`;
+                verificarOperador = true;
             }
-            verificar1 = false;
+            verificarPonto = false;
         })
         igual.addEventListener("click", ()=>{
-            if(p.textContent.length != 0){
-                p.innerHTML = `${eval(p.textContent)}`
+            if(entrada.textContent.length != 0){
+                entrada.innerHTML = `${eval(entrada.textContent)}`
             }
-            verificar2 = true;
+            verificarDigito = true;
         })
     </script>
     </body>
