@@ -135,18 +135,30 @@
             width: 30%;
             background-color: #2a2b36;
             border: 0;
-            border-bottom: 3px solid #1f2358;
-            border-radius: 5px;
+            border-bottom: 2px solid #1f2358;
+            border-radius: 3px;
             color: white;
             text-align: right;
+            transition: border-bottom 0.3s ease-in-out;
+        }
+
+        #titulo:focus, #titulo:hover {
+            outline: none;
+            border-bottom: 2px solid dodgerblue;
         }
 
         #buscar {
-            background-color: dodgerblue;
+            background-color: #1e90ff;
             border: 0;
             font-size: 18px;
             padding: 5px;
             border-radius: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #buscar:hover {
+            cursor: pointer;
+            background-color: #6fb7ff;
         }
     </style>
 </head>
@@ -154,7 +166,7 @@
 <body>
     <div class="container">
         <div class="box" id="busca">
-            <input type="text" id="titulo" placeholder="Digite o nome do Filme">
+            <input type="text" id="titulo" placeholder="Digite o nome do filme" autocomplete="off">
             <button id="buscar">Buscar</button>
         </div>
         <div class="box" id="resultado">
