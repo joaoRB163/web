@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+            background-color: #3a3a3a;
+            justify-content: center;
+        }
+
+        .box {
+            flex-shrink: 0;
+            width: 45%;
+        }
+
+        #box1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 90px;
+        }
+
+        #box2 {
+            display: flex;
+            background-color: white;
+            margin: 20px;
+            border-radius: 25px;
+            align-items: center;
+        }
+
+        #contagem {
+            display: flex;
+            height: 90%;
+            flex-direction: column;
+            overflow: auto;
+            flex-grow: 1;
+
+        }
+
+        #titulo {
+            text-align: center;
+            align-content: center;
+            width: 25%;
+            height: 98%;
+            border-right: 1px solid gray;
+        }
+
+        #titulo p {
+            margin: 5px 5px 5px 15px;
+            text-align: left;
+            height: 0;
+            width: 80%;
+        }
+
+        #timer {
+            width: 80%;
+            text-align: center;
+        }
+
+        #limpar {
+            margin: 20px auto 20px auto;
+            color: black;
+        }
+
+        button {
+            border: 0;
+            font-size: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: orangered;
+            font-weight: bolder;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #ff723e;
+
+        }
+
+        li:nth-child(2n) {
+            background-color: rgba(59, 59, 59, 0.336);
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1">
+            <div id="timer">00:00:00:00</div>
+            <div id="botoes">
+                <button id="zerar">Zerar</button>
+                <button id="start">Iniciar</button>
+                <button id="parar">Parar</button>
+            </div>
+        </div>
+        <div class="box" id="box2">
+            <div id="titulo">
+                <h1>Paradas</h1>
+                <p>Espaço: start/stop</p><br>
+                <p>Backspace: Zerar</p><br>
+                <p>Enter: Parar</p><br>
+                <p>Delete: Limpar</p>
+
+            </div>
+            <div id="contagem">
+                <ol id="paradas">
+
+                </ol>
+                <button id="limpar">Limpar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timer = document.querySelector("#timer");
+        let zerar = document.querySelector("#zerar");
+        let startTime = document.querySelector("#start");
+        let parar = document.querySelector("#parar");
+        let lista = document.querySelector("#paradas");
+        let limpar = document.querySelector("#limpar");
+        let tempoFormatado = "00:00:00:00", timerInterval, tempoAcumulado = 0;
+        let contagem = false
+
+        function ContarTimer() {
+            startTime = new Date().getTime();
+            timerInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const TempoCorrido = tempoAcumulado + (now - startTime);
+
+                const horas = Math.floor(TempoCorrido / (1000 * 60 * 60));
+                const minutos = Math.floor((TempoCorrido % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((TempoCorrido % (1000 * 60)) / 1000);
+                const centesimos = Math.floor((TempoCorrido % 1000) / 10);
+
+                tempoFormatado = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}.${centesimos.toString().padStart(2, '0')}`;
+                timer.innerHTML = `${tempoFormatado}`;
+            }, 10); 
+        }
+
+        function IniciarTimer() {
+            if (contagem) {
+                clearInterval(timerInterval);
+                contagem = false;
+                tempoAcumulado += new Date().getTime() - startTime;
+                start.innerHTML = `Continuar`
+            } else {
+                ContarTimer();
+                contagem = true;
+                start.innerHTML = `Pausar`
+            }
+        }
+
+        function ZerarTimer() {
+            clearInterval(timerInterval);
+            contagem = false;
+            timer.innerHTML = `00:00:00:00`;
+            start.innerHTML = `Iniciar`;
+            tempoFormatado = "00:00:00:00";
+            lista.innerHTML = ``
+        }
+
+        function PararTimer() {
+            lista.innerHTML += `<li>${tempoFormatado}</li>`
+        }
+
+        function LimparLista() {
+            lista.innerHTML = ``
+        }
+
+        start.addEventListener("click", () => {
+            IniciarTimer();
+        })
+
+        zerar.addEventListener("click", () => {
+            ZerarTimer();
+        })
+
+        parar.addEventListener("click", () => {
+            PararTimer();
+        })
+
+        limpar.addEventListener("click", () => {
+            LimparLista();
+        })
+
+        document.body.addEventListener("keydown", (e) => {
+            if (e.code == "Space") {
+                IniciarTimer();
+            } else if (e.code == "Enter") {
+                PararTimer();
+            } else if (e.code == "Backspace") {
+                ZerarTimer();
+            } else if (e.code == "Delete") {
+                LimparLista();
+            }
+        })
+
+    </script>
+</body>
+
+</html>
