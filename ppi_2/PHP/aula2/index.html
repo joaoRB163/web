@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 2 - Formulários</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form action="processa.php" method="post" id="formUser">
+            <div id="user">
+                <label for="nomeUser">Nome Completo:</label>
+                <input type="text" id="nomeUser" placeholder="Nome" name="nome">
+            </div>
+            <div id="selecao">
+                <label for="assuntoMsg">Assunto:</label>
+                <select name="assunto" id="assuntoMsg">
+                    <option name="dúvida" id="duvida">Dúvida</option>
+                    <option name="matricula" id="matriula">Matricula</option>
+                </select>
+            </div>
+
+            <button type="submit">Registrar</button>
+        </form>
+
+        <script>
+            const form = document.getElementById("formUser")
+            
+            form.addEventListener('submit', (e)=>{
+                
+                const nome = document.getElementById("nomeUser").value
+                
+                if(nome == ""){
+                    e.preventDefault()
+                    alert("Nome vazio")
+                }
+            })
+        </script>
+    </body>
+</html>
