@@ -6,9 +6,16 @@
     <title>Aula 3</title>
 </head>
 <body>
-    <form action="salvar.php" method="post">
-        <input type="text" name="nome">
-        <input type="submit">
+
+    <form action="salvar.php">
+        <input type="text" name="nome" placeholder="Nome">
+        <button type="submit">Salvar</button>
+    </form>
+
+    <form action="conexao.php" method="post">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Salvar</button>
     </form>
 
     <a href="ler.php">ler nomes</a>
