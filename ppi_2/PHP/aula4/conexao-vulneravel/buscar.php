@@ -5,6 +5,7 @@ $busca = $_POST['busca_post'];
 
 $sql = "SELECT * FROM `prd_vulneravel` WHERE nome LIKE '%$busca%'";
 $result = $conn->query($sql);
+$conn->close();
 ?>
 
 <h2>Resultados:</h2>
