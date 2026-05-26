@@ -18,7 +18,7 @@ $conn->close();
 ?>
 
 <h2>Resultados da Padaria (Seguro):</h2>
-<table border="1" style="border-collapse: collapse;">
+<table border="1" style="border-collapse: collapse;" cellpadding="5"> 
     <tr>
         <th>ID</th>
         <th>Nome</th>
@@ -35,5 +35,4 @@ $conn->close();
     <?php endwhile; ?>
 </table>
 
-<br><a href="index.html">Voltar para a Busca</a>
 
