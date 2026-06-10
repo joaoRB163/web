@@ -5,9 +5,16 @@ iniciarSessaoSegura();
 $usuarioDigitado = $_POST['usuario'] ?? '';
 $senhaDigitada = $_POST['senha'] ?? '';
 
+$usuarioCorreto = 'aluno';
+
+$hashSenhaCorreta = password_hash(
+    '123456',
+    PASSWORD_DEFAULT
+);
+
 if (
-    $usuarioDigitado === 'batata'
-    && $senhaDigitada === 'batata'
+    $usuarioDigitado === $usuarioCorreto
+    && password_verify($senhaDigitada, $hashSenhaCorreta)
 ) {
     session_regenerate_id(true);
 
