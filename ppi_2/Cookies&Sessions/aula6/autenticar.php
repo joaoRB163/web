@@ -5,10 +5,10 @@ iniciarSessaoSegura();
 $usuarioDigitado = $_POST['usuario'] ?? '';
 $senhaDigitada = $_POST['senha'] ?? '';
 
-$usuarioCorreto = 'aluno';
+$usuarioCorreto = 'batata';
 
 $hashSenhaCorreta = password_hash(
-    '123456',
+    'batata',
     PASSWORD_DEFAULT
 );
 
