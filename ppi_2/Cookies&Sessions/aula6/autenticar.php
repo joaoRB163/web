@@ -6,8 +6,8 @@ $usuarioDigitado = $_POST['usuario'] ?? '';
 $senhaDigitada = $_POST['senha'] ?? '';
 
 if (
-    $usuarioDigitado === 'aluno'
-    && $senhaDigitada === '123456'
+    $usuarioDigitado === 'batata'
+    && $senhaDigitada === 'batata'
 ) {
     session_regenerate_id(true);
 
